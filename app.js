@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect("mongodb+srv://ebetosin:Eben2ojo.@cluster0.hcgej.mongodb.net/todolistDB");
 
 const itemsSchema = {
     name: String
@@ -150,7 +150,7 @@ app.post("/delete", async (req, res) => {
 });
 
   
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running on port 3000.")
 });
 
